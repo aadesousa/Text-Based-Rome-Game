@@ -1,5 +1,4 @@
 import time
-import art
 import random
 from pyfiglet import Figlet
 class rome():
@@ -10,9 +9,10 @@ class rome():
         input("press Enter to start")
         caesar = Caesar()
     def ip(self, tx, one, two, three):
+        f = Figlet(font='univers')
+        print(f.renderText("Julius Caesar"))
         x = 0
         print("\n" * 100)
-        art.a()
         print(" ", "_"* 70, " ")
         print("_"*75)
         print(tx)
@@ -118,13 +118,17 @@ class Caesar():
     def re(self):
         if self.MarriedToCornelia == 1:
             self.j = rome.ip("self", "Returning to Rome, your inheritance is gone and you are forced to live modestly.", "Enter public life and begin the climb up the cursus honorum", "retire with your wife and continue your modest life", "voice your discontent regarding your inheritance to Sulla's supporter's in the Senate")
+            if self.j == 1:
+                self.ch()
+            if self.j == 2:
+                print("You retire with your wife, however in the next year she dies. you have nothing to live for and live the rest of your life in despair.")
         else:
             self.j = rome.ip("self", "Returning to Rome, you have the choice of retiring with your wife or entering public life, climbing up the cursus honorum.", "Retire", "Enter Public life")
-        if self.j == 1:
-            self.ch
-        if self.j == 2:
-            print("You retire with your wife, however in the next year she dies. you have nothing to live for and live the rest of your life in despair.")
-            return None
+            if self.j == 1:
+                self.ch()
+            if self.j == 2:
+                print("You retire with your wife, however in the next year she dies. you have nothing to live for and live the rest of your life in despair.")
+                return None
         if self.j== 3:
             print("sulla's supporters have you killed")
             time.sleep(99)
@@ -154,7 +158,7 @@ class Caesar():
             return None
     def glory(self):
         if self.MarriedToCornelia == 1:
-            rome.ip('You serve your post in Spain with distinction, and upon returning to Rome you discover your wife is dead and  you are given the option to marry Pompeia, the granddaughter of Sulla.', "Marry her", "Remain a bachelor")
+            rome.ip('self', 'You serve your post in Spain with distinction, and upon returning to Rome you discover your wife is dead and  you are given the option to marry Pompeia, the granddaughter of Sulla.', "Marry her", "Remain a bachelor", ' ')
             self.cae()
         else:
             self.j =rome.ip('self', 'You serve your post in Spain with distinction, and upon returning to Rome you discover that your friends as well as your enemies mock your celibacy and you are given the option to marry Pompeia, the granddaughter of Sulla.', "Marry her", "Remain celibate", " ")
